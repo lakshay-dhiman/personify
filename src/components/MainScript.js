@@ -5,7 +5,7 @@ import Nav from "./Nav";
 
 const host = window.location.protocol+'//'+window.location.hostname;
 let redirect_uri ;
-if(window.location.port){
+if(window.location.port!=''){
   redirect_uri = `${host}:${window.location.port}/song_info`;
 }else{
   redirect_uri = `${host}/song_info`
