@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Personify | Finding lyrics made easy",
+  "name": "Fetch song lyrics",
   "icons": [
     {
       "src": "favicon.ico",

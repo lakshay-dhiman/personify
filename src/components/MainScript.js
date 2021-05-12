@@ -61,9 +61,12 @@ const MainScript = () => {
           localStorage.getItem("access_token") === "undefined" ||
           !localStorage.getItem("access_token")
         ) {
+
+          const host = window.location.hostname
+
           $.ajax({
             method: "post",
-            url: "http://localhost/Personify/server/access_token.php",
+            url: `${host}/server/access_token.php`,
             // url: "http://personify.sakujo.in/server/access_token.php",
             data: data,
             success: (data) => {
@@ -78,10 +81,11 @@ const MainScript = () => {
             },
           });
         } else if (localStorage.getItem("access_token") === "expired") {
+          const host = window.location.hostname
           $.ajax({
             method: "post",
             // url: "http://localhost/practice/React%20/Learn/spotify-react/src/server/refresh_token.php",
-            url: "http://localhost/Personify/server/refresh_token.php",
+            url: `${host}/server/refresh_token.php`,
             data: {
               refresh_token: localStorage.getItem("refresh_token"),
             },
