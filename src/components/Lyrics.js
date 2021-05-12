@@ -67,11 +67,10 @@ const Lyrics = ({ artist, track }) => {
 
     const fetch_lyrics = (() => {
 
-      const host = window.location.hostname
+      const host = window.location.protocol+'//'+window.location.hostname;
       $.ajax({
         method: "post",
         url:`${host}/server/fetch_lyrics.php`,
-        // url:"http://personify.sakujo.in/server/get_lyrics.php",
         data: {
           url_parms: get_url_parms(),
         },

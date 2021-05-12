@@ -3,6 +3,13 @@ import $ from "jquery";
 import CurrentSong from "./CurrentSong";
 import Nav from "./Nav";
 
+const host = window.location.protocol+'//'+window.location.hostname;
+let redirect_uri ;
+if(window.location.port){
+  redirect_uri = `${host}:${window.location.port}/song_info`;
+}else{
+  redirect_uri = `${host}/song_info`
+}
 
 const MainScript = () => {
   const [user, setUser] = useState(null),
@@ -56,18 +63,15 @@ const MainScript = () => {
         const code = get["code"],
           data = {
             code: code,
-          };
+            redirect_uri : redirect_uri
+        };
         if (
           localStorage.getItem("access_token") === "undefined" ||
           !localStorage.getItem("access_token")
         ) {
-
-          const host = window.location.hostname
-
           $.ajax({
             method: "post",
             url: `${host}/server/access_token.php`,
-            // url: "http://personify.sakujo.in/server/access_token.php",
             data: data,
             success: (data) => {
               data = JSON.parse(data);
@@ -81,13 +85,12 @@ const MainScript = () => {
             },
           });
         } else if (localStorage.getItem("access_token") === "expired") {
-          const host = window.location.hostname
           $.ajax({
             method: "post",
-            // url: "http://localhost/practice/React%20/Learn/spotify-react/src/server/refresh_token.php",
             url: `${host}/server/refresh_token.php`,
             data: {
               refresh_token: localStorage.getItem("refresh_token"),
+              redirect_uri : redirect_uri
             },
             success: (data) => {
               data = JSON.parse(data);
@@ -127,3 +130,4 @@ const MainScript = () => {
 };
 
 export default MainScript;
+

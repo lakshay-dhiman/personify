@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST');
 
 header("Access-Control-Allow-Headers: X-Requested-With");
-$redirect_uri = 'http://localhost:3000/song_info';
+$redirect_uri = $_POST['redirect_uri'];
 $code = $_POST['code'];
 // $code = 'AQD3nf_djZuh4-7O7M_7hVnmHx5uFFSF_B_oQrs6CVXgpbjnWH5xXp273nMkoLEZ5gb0EaBQM0Ec08sGf8MTyauSUV67knGO2KeoKzHkneo17EpjbdDFQVsjwHCiI337t99p63y4zPlKlAzBvlUOCdgKqPNBVJd5KTQQ31m2ilJxslhD_Wy-kBFOaDDTjBicBciP9UhzzDLOSBKQhYP84p382PzReq3_DmfErh_qFt53';
 $grant_type = 'authorization_code';

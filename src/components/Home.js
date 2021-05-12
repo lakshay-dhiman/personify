@@ -16,9 +16,13 @@ const Home = () => {
 
 
   const login_spotify = () => {
-    // const redirect_uri = "http://localhost:3000/song_info",
-    const redirect_uri = "http://personify.sakujo.in/song_info",
-      client_id = "d3708d18048e4a108714ecfb905b2179",
+    const host = window.location.protocol+'//'+window.location.hostname;
+    let redirect_uri ;
+    if(window.location.port){
+      redirect_uri = `${host}:${window.location.port}/song_info`;
+    }
+    
+      const client_id = "d3708d18048e4a108714ecfb905b2179",
       authorisation_scope = "user-read-currently-playing user-read-email",
       request_type = "code";
     localStorage.clear();
