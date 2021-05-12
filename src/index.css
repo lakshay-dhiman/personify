@@ -1,0 +1,347 @@
+@import url(https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap);
+:root {
+	background: #000;
+	min-height: 100vh
+}
+
+body {
+	margin: 0;
+	color: #fff
+}
+
+.logo {
+	font-family: "Big Shoulders Display", cursive;
+	text-align: center
+}
+
+.logo span {
+	color: #1db954
+}
+
+.load {
+	margin-bottom: auto;
+	font-size: 12em;
+	margin-top: 30vh;
+	display: flex;
+	flex-direction: column
+}
+
+.loaded {
+	font-size: 5em;
+	transition: 1s;
+	margin-top: 100px
+}
+
+.invisible-home {
+	opacity: 0
+}
+
+.visible-home {
+	opacity: 1;
+	transition: .5s
+}
+
+.main-home {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	margin: 150px auto auto;
+	text-align: center
+}
+
+.main-home .welcome {
+	font-size: 3em;
+	font-family: "Ubuntu", sans-serif
+}
+
+.main-home .para {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 1.7em;
+	max-width: 30vw;
+	margin-top: 50px;
+	color: #bebebe
+}
+
+.main-home button {
+	margin-top: 100px;
+	font-size: 1.5em;
+	padding: 10px 50px;
+	border: none;
+	outline: none;
+	background: #1db954;
+	color: #000;
+	border-radius: 5px
+}
+
+.visible-loading {
+	transform-origin: center;
+	transform: translateY(25%) scale(.8);
+	z-index: 100;
+	margin-left: 30px;
+	/* display : block */
+}
+
+.invisible-loading {
+	display: none
+}
+
+nav {
+	background: #242424;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	height: 60px
+}
+
+nav .logo {
+	font-size: 2.5em;
+	margin: auto auto auto 100px
+}
+
+.user-info {
+	display: flex;
+	flex-direction: row-reverse;
+	margin-right: 100px;
+	background: #000;
+	padding: 5px 30px;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	margin-top: auto;
+	margin-bottom: auto;
+	border-radius: 50px
+}
+
+.user-info,
+.user-info .name {
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content
+}
+
+.user-info .name {
+	font-family: "Ubuntu", sans-serif;
+	margin-left: 20px;
+	transform: translateY(5px)
+}
+
+.user-info .pfp {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%
+}
+
+.currently-playing {
+	background: #242424;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	font-family: "Ubuntu", sans-serif;
+	border-radius: 10px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	width: 35vw;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	height: 70vh;
+	padding: 20px 40px
+}
+
+.currently-playing .heading {
+	font-size: 2.5em;
+	color: #1db954;
+	margin-right: 40px;
+	margin-top: 20px
+}
+
+.currently-playing .widget {
+	display: flex;
+	padding: 30px;
+	margin-top: 50px;
+	border-radius: 5px;
+	flex-direction: column;
+	justify-content: center
+}
+
+.currently-playing .widget img {
+	width: 350px;
+	height: auto;
+	margin: auto;
+	border-radius: 5px
+}
+
+.currently-playing .widget .name {
+	margin-top: 50px;
+	font-size: 2em;
+	text-transform: capitalize;
+	text-align: center
+}
+
+.currently-playing .widget .artist {
+	margin-top: 20px;
+	font-size: 1.1em;
+	text-align: center
+}
+
+.currently-playing .widget .album {
+	margin-top: 30px;
+	text-align: center
+}
+
+.lyrics-block {
+	margin-right: 100px;
+	border-radius: 10px;
+	background: #242424;
+	width: 40vw
+}
+
+.currently-playing-component {
+	display: flex;
+	justify-content: space-between;
+	width: 100vw;
+	margin: 100px auto auto
+}
+
+.currently-playing-component .wrapper {
+	margin-left: 100px
+}
+
+.currently-playing-component .credits,
+.lyrics-component .credits {
+	text-align: right;
+	padding: 20px;
+	background: #3a3a3a;
+	border-radius: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0
+}
+
+.currently-playing-component .credits a,
+.lyrics-component .credits a {
+	color: #fff;
+	text-decoration: underline;
+	font-weight: 700
+}
+
+.lyrics {
+	height: 70vh;
+	overflow-y: auto;
+	background: #242424;
+	border-radius: 10px;
+	padding: 20px 40px
+}
+
+.lyrics::-webkit-scrollbar {
+	width: 20px
+}
+
+.lyrics::-webkit-scrollbar-track {
+	background-color: transparent
+}
+
+.lyrics::-webkit-scrollbar-thumb {
+	background-color: #d6dee1;
+	border-radius: 20px;
+	border: 6px solid transparent;
+	background-clip: content-box
+}
+
+.lyrics .name {
+	font-size: 2.5em;
+	font-family: "Ubuntu", sans-serif;
+	color: #1db954
+}
+
+.lyrics .the_lyrics {
+	margin-top: 50px;
+	font-size: 1.5em;
+	line-height: 50px;
+}
+
+.lyrics-block{
+	display: flex;
+}
+
+.loading-lyrics {
+	width: 20%;
+	height: 20%;
+	margin: auto;
+	align-content: center;
+}	
+
+.lyrics-component{
+	width: 100%;
+}
+
+.loading-lyrics,
+.notfound {
+	display: flex;
+	justify-content: center
+}
+
+.notfound {
+	height: 70vh;
+	flex-direction: column
+}
+
+.notfound div {
+	font-size: 2.5em;
+	font-family: "Ubuntu", sans-serif;
+	text-align: center
+}
+
+.notfound img {
+	margin-left: 50%;
+	transform: translateX(-50%);
+	margin-top: 50px;
+	width: 60%
+}
+
+.ad_playing,
+.no_song {
+	font-family: "Ubuntu", sans-serif;
+	display: grid;
+	grid-template-columns: auto auto;
+	padding-top: 200px
+}
+
+.ad_playing .text,
+.no_song .text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	margin-left: 50px
+}
+
+.ad_playing .title,
+.no_song .title {
+	font-size: 4em
+}
+
+.ad_playing .subtitle,
+.no_song .subtitle {
+	font-size: 2em;
+	margin-top: 50px;
+	width: 60%
+}
+
+.ad_playing img,
+.no_song img {
+	width: 30vw;
+	margin-left: 120px
+}
+
+.ad_playing .text {
+	margin-left: 130px!important
+}
+
+.ad_playing img {
+	margin-right: 130px!important;
+	width: 35vw
+}
+
+
+/*# sourceMappingURL=main.14506a72.chunk.css.map */
