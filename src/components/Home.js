@@ -20,6 +20,8 @@ const Home = () => {
     let redirect_uri ;
     if(window.location.port){
       redirect_uri = `${host}:${window.location.port}/song_info`;
+    }else{
+      redirect_uri = `${host}/song_info`;
     }
     
       const client_id = "d3708d18048e4a108714ecfb905b2179",
